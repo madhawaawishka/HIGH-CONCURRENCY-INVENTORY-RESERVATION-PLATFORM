@@ -1,0 +1,18 @@
+{
+  "name": "@stockforge/shared-kernel",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Framework-free domain primitives shared by every module: errors, clock, ids, money, retry.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "@stockforge/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json"
+  }
+}

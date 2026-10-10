@@ -1,0 +1,7 @@
+dist/
+coverage/
+packages/database/src/generated/
+pnpm-lock.yaml
+
+# Reference specification: kept exactly as authored.
+High_Concurrency_Inventory_Reservation_Project_Specification_NestJS_Updated.md

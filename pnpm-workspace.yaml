@@ -1,0 +1,14 @@
+packages:
+  - apps/*
+  - packages/*
+
+# pnpm blocks dependency install scripts by default; each package is an explicit decision.
+allowBuilds:
+  '@prisma/engines': true # downloads the schema engine used by `prisma migrate`
+  '@swc/core': true # native compiler used by Vitest for decorator metadata
+  esbuild: true # used by tsx (seed scripts)
+  prisma: true
+  '@scarf/scarf': false # install-time telemetry (via swagger-ui-dist)
+  cpu-features: false # optional native addon for ssh2; not needed
+  protobufjs: false # postinstall only prints a version notice
+  ssh2: false # optional native build; Testcontainers talks to the local Docker socket

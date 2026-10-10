@@ -1,0 +1,32 @@
+{
+  "name": "@stockforge/database",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PostgreSQL schema, migrations, seed data and the Prisma client factory shared by the API and workers.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "@stockforge/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "generate": "prisma generate",
+    "migrate:deploy": "prisma migrate deploy",
+    "migrate:create": "prisma migrate dev --create-only",
+    "migrate:status": "prisma migrate status",
+    "seed": "prisma db seed"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.10.0",
+    "@prisma/client": "^7.10.0"
+  },
+  "devDependencies": {
+    "dotenv": "^18.0.7",
+    "prisma": "^7.10.0",
+    "tsx": "^4.23.15"
+  }
+}
